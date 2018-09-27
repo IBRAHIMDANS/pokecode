@@ -1,7 +1,7 @@
 
 class Pokemon {
 
-constructor (number,name,size,weight,type,level=3){
+constructor ({number,name,size,weight,type,level=3}){
   this.number = number
   this.pokename = name
   this.size = size
@@ -11,7 +11,7 @@ constructor (number,name,size,weight,type,level=3){
   this.yell()
 }
  yell(){
-   console.log(`•••••• ${this.pokeName}`);
+   console.log(`•••••• ${this.pokename}`);
  }
 
 }
