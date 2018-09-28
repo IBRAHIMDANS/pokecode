@@ -13,7 +13,7 @@ function main(file, ) {
   let trainer = new Trainer(json.firstname, json.age)
   trainer.hey()
   let pokemon = PokemonFactory.create('Salamèche')
-
+ 
   pokemon.dump(on_file)
 }
 if (process.argv.length < 3) {

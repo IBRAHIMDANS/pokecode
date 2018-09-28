@@ -2,6 +2,7 @@ const fs = require('fs');
 const Trainer = require('./trainer');
 const Pokemon = require('./Pokemon');
 const PokemonFactory = require('./PokemonFactory');
+const pokedex = require('../data/pokedex.json')
 
 function main(file, ) {
 
@@ -12,9 +13,13 @@ function main(file, ) {
   const json = JSON.parse(data)
   let trainer = new Trainer(json.firstname, json.age)
   trainer.hey()
-  let pokemon = PokemonFactory.create('Salamèche')
-
-  pokemon.dump(on_file)
+  const Arraypok = []
+  for (const item of ["Bulbizarre","Salamèche","Carapuce"]){
+      Arraypok.push(PokemonFactory.create(item))
+    }
+ trainer.start(Arraypok)
+ trainer.serialize()
+ // pokemon.dump(on_file)
 }
 if (process.argv.length < 3) {
   console.log("Usage : node main.js <filename>");

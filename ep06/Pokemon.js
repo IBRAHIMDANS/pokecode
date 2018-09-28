@@ -7,14 +7,16 @@ const pokedex = require('../data/pokedex.json')
 class Pokemon {
 
 
-  constructor ({number,name,size,weight,type,level=3}){
+  constructor ({number,name,size,weight,type,level=3}, is_yelling = false){
     this.number = number
     this.pokename = name
     this.size = size
     this.weight = weight
     this.type = type
     this.level = level
+    if(is_yelling){
     this.yell()
+    }
   }
 
   yell(){
