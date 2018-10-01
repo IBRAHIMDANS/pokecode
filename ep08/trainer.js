@@ -36,7 +36,7 @@ for (const p of this.pokemons) {
   pokemons.push(p.number);
 }
       let data = {
-        traner  : [
+        trainers  : [
 {
   id : this.id,
 firstname : this.firstname,

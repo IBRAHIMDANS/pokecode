@@ -4,10 +4,8 @@
          "id": 1,
          "firstname": "Ibrahima",
          "age": 21,
-         "pokemons": [
-            "001"
-         ],
-         "startDate": "2018-9-28"
+         "pokemons": [],
+         "startDate": "2018-10-1"
       }
    ]
 }

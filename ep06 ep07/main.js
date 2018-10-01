@@ -19,7 +19,7 @@ if (true) {
       Arraypok.push(PokemonFactory.create(item))
     }
 }
- trainer.start(Arraypok)
+ // trainer.start(Arraypok)
  trainer.serialize()
  // pokemon.dump(on_file)
 }

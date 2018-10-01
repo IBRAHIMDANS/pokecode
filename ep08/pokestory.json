@@ -1,13 +1,13 @@
 {
-   "traner": [
+   "trainers": [
       {
          "id": 1,
          "firstname": "Ibrahima",
          "age": 21,
          "pokemons": [
-            "001"
+            "007"
          ],
-         "startDate": "2018-9-28"
+         "startDate": "2018-10-1"
       }
    ]
 }
