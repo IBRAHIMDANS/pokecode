@@ -19,7 +19,10 @@ class Pokemon {
     this.yell()
     }
   }
+   action(){
 
+     
+   }
   yell(){
     console.log(`•••••• ${this.pokename.toUpperCase()}`);
       console.log(this.attacks);
