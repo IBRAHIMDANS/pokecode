@@ -1,2 +1,3 @@
 https://gist.github.com/majdi/4fc5044269d57bf9abce16d4d8f79cdd
 git add --all ; git commit -m 'ok'; git push
+node main.js ../data/trainer.json --log
