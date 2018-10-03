@@ -30,8 +30,11 @@ class Trainer{
       `);
       this.pokemons[0].yell()
     }
-    addPokemon(pokemon){
-      this.pokemons.push(pokemon);
+    getPokemons(pokemon){
+      return this.pokemons
+    }
+    setPokemons(pokemon){
+      this.pokemons = (pokemon);
     }
     list(){
       for (let pokemon of this.pokemons) {

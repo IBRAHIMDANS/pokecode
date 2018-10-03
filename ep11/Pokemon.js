@@ -14,30 +14,38 @@ class Pokemon {
     this.weight = weight
     this.type = type
     this.level = level
-    this.attacks = attacks
+    // this.attacks = attacks
     if(is_yelling){
       this.yell()
     }
   }
-
-  action(){
-    let random = Math.floor(Math.round()*3)
-    let randomlevl = random+1
-    switch (random) {
-      case 0: console.log("I'm sleeping");
-      break;
-      case 1: console.log("I'm playing");
-      break;
-      case 2: if (this.level >= 100){ console.log(`I'm the best ${this.pokename} in Internet`);}else{
-        console.log(`I'm level up from ${this.level} to ${this.levl}+${randomlevl} `);
-        break;
-      }
-    }
-  }
   yell(){
     console.log(`•••••• ${this.pokename.toUpperCase()}`);
-    console.log(this.attacks);
   }
+  action(){
+    let random = Math.floor(Math.random()*3)
+    let randomlevl = Math.ceil(Math.random()*3)
+    switch (random) {
+      case 0:
+        console.log("I'm sleeping");
+        break;
+      case 1:
+        console.log("I'm playing");
+        break;
+      case 2:
+        if (this.level >= 100){
+          this.level= 100;
+          console.log(`I'm the best ${this.pokename} in Internet`);
+        }else{
+          console.log(`I'm level up from ${this.level} to ${this.level+ randomlevl} `);
+          this.level = this.level + randomlevl;}
+
+        default:
+          break;
+  }
+
+  }
+
 
   dump(on_file= false){
     let type_str= '[';

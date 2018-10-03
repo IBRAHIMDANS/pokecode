@@ -8,6 +8,7 @@ class Game {
   constructor(to_save = false) {
     this.tosave = to_save;
     this.pokestory = "pokestory.json"
+    this.trainers = []
 
   }
 
@@ -17,23 +18,22 @@ class Game {
       const json = JSON.parse(data);
 
 
-      let trainers = []
+
       for (let item of json.trainers) {
         let trainer = new Trainer(item.firstname,item.age);
+        let pokemons = []
         for (let numberPokemon of item.pokemons) {
           const pokemon = PokemonFactory.create({
             key : 'ndex',
             value: numberPokemon
           });
-        pokemon.dump(true)
-        pokemon.action();
-        trainer.addPokemon(pokemon);
-
+        // pokemon.dump()
+        pokemons.push(pokemon)
         }
 
-
+        trainer.setPokemons(pokemons)
         trainer.list()
-        trainers.push(trainer)
+        this.trainers.push(trainer)
 
 
       }
@@ -53,24 +53,26 @@ class Game {
 
         trainer.start(Arraypok)
         trainer.serialize()
+        this.trainers.push(trainer)
 
       }
     }
 
     start(){
-      console.log("0 : Hello");
-      console.log("1 : Goodbye");
-
-      process.stdin.setEncoding("ascii");
-
-      process.stdin.on("data'", function(chunk){
-        console.log(`You write ${chunk}`);
-
-      });
-      process.stdin.on("end", function(){
-        console.log('The game is ended');
-
-      })
+      this.trainers[0].getPokemons()[0].action()
+      // console.log("0 : Hello");
+      // console.log("1 : Goodbye");
+      //
+      // process.stdin.setEncoding("ascii");
+      //
+      // process.stdin.on("data'", function(chunk){
+      //   console.log(`You write ${chunk}`);
+      //
+      // });
+      // process.stdin.on("end", function(){
+      //   console.log('The game is ended');
+      //
+      // })
     }
   }
   module.exports = Game;
