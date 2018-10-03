@@ -17,6 +17,7 @@ let trainers = []
      const pokemon = PokemonFactory.create({
        key : 'ndex',
        value: numberPokemon})
+       pokemon.dump(true)
        trainer.addPokemon(pokemon);
 
    }

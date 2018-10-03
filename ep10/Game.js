@@ -25,6 +25,7 @@ class Game {
             key : 'ndex',
             value: numberPokemon
           });
+          pokemon.dump(true)
           trainer.addPokemon(pokemon);
         }
         trainer.list()

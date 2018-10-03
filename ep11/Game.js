@@ -25,8 +25,10 @@ class Game {
             key : 'ndex',
             value: numberPokemon
           });
-        trainer.addPokemon(pokemon);
+        pokemon.dump(true)
         pokemon.action();
+        trainer.addPokemon(pokemon);
+
         }
 
 
