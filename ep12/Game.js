@@ -12,7 +12,7 @@ class Game {
 
   }
 
-  init(){
+  init(filename){
     if (fs.existsSync(this.pokestory)) {
       const data = fs.readFileSync(this.pokestory,"utf-8");
       const json = JSON.parse(data);
@@ -27,7 +27,7 @@ class Game {
             key : 'ndex',
             value: numberPokemon
           });
-        // pokemon.dump()
+        pokemon.dump()
         pokemons.push(pokemon)
         }
 
@@ -39,22 +39,26 @@ class Game {
       }
     }
     else {
-      const data = fs.readFileSync(file,'utf-8')
+      const data = fs.readFileSync(filename,'utf-8')
       const output = data.replace(/\n/g,'')
       console.log(`Reading new json data information >> ${output}`);
 
       const json = JSON.parse(data)
-      let trainer = new Trainer(json.firstname, json.age)
-      trainer.hey()
-
-      const Arraypok = []
-      for (const item of ["Bulbizarre","Salamèche","Carapuce"]){
-        Arraypok.push(PokemonFactory.create(item))  }
-
-        trainer.start(Arraypok)
-        trainer.serialize()
-        this.trainers.push(trainer)
-
+      for(let person of json){
+        let trainer = new Trainer(json.firstname, json.age)
+        trainer.hey()
+        const starter = []
+        for (const item of ["Bulbizarre","Salamèche","Carapuce"]){
+          starter.push(PokemonFactory.create({key:"nom", value : item}))
+        }
+          trainer.start(starter)
+          let pokemons = trainer.getPokemons();
+          for (let i=0 ; i<5 ; i++){
+            pokemons.push(PokemonFactory.create());
+          }
+          trainer.setPokemons(pokemons);
+          this.trainers.push(trainer)
+}
       }
     }
 

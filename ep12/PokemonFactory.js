@@ -3,11 +3,17 @@ const pokedex = require('../data/pokedex.json')
 
 class PokemonFactory {
 
-  static create({key, value}){
+  static create({key , value}= {undefined , undefined}){
+    let pokemons
+    if(key != undefined){
     const pokemon = pokedex.find(function(item){
       return item[key] == value;
     });
+}else {
+let randomIndex = Math.floor(Math.random()*pokedex.length);
+pokemon = pokedex(randomIndex)
 
+}
     let type = []
     let i =1
     while (pokemon[`type${i}`] != undefined) {

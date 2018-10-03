@@ -39,7 +39,7 @@ class Game {
       }
     }
     else {
-      const data = fs.readFileSync(file,'utf-8')
+      const data = fs.readFileSync(filename,'utf-8')
       const output = data.replace(/\n/g,'')
       console.log(`Reading new json data information >> ${output}`);
 
