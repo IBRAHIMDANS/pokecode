@@ -4,7 +4,7 @@ const pokedex = require('../data/pokedex.json')
 class PokemonFactory {
 
   static create({key , value}= {undefined , undefined}){
-    let pokemons
+    let pokemon
     if(key != undefined){
     const pokemon = pokedex.find(function(item){
       return item[key] == value;
