@@ -11,3 +11,4 @@ const to_save = process[4] == "to_save"
 
 const game = new Game (on_file,to_save)
 game.init(filename);
+game.start()
