@@ -25,10 +25,15 @@ class Game {
             key : 'ndex',
             value: numberPokemon
           });
-          trainer.addPokemon(pokemon);
+        trainer.addPokemon(pokemon);
+        pokemon.action();
         }
+
+
         trainer.list()
         trainers.push(trainer)
+
+
       }
     }
     else {
@@ -46,8 +51,10 @@ class Game {
 
         trainer.start(Arraypok)
         trainer.serialize()
+
       }
     }
+
     start(){
       console.log("0 : Hello");
       console.log("1 : Goodbye");

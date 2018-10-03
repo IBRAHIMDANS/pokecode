@@ -16,16 +16,27 @@ class Pokemon {
     this.level = level
     this.attacks = attacks
     if(is_yelling){
-    this.yell()
+      this.yell()
     }
   }
-   action(){
 
-     
-   }
+  action(){
+    let random = Math.floor(Math.round()*3)
+    let randomlevl = random+1
+    switch (random) {
+      case 0: console.log("I'm sleeping");
+      break;
+      case 1: console.log("I'm playing");
+      break;
+      case 2: if (this.level >= 100){ console.log(`I'm the best ${this.pokename} in Internet`);}else{
+        console.log(`I'm level up from ${this.level} to ${this.levl}+${randomlevl} `);
+        break;
+      }
+    }
+  }
   yell(){
     console.log(`•••••• ${this.pokename.toUpperCase()}`);
-      console.log(this.attacks);
+    console.log(this.attacks);
   }
 
   dump(on_file= false){
@@ -42,19 +53,19 @@ class Pokemon {
     size >> ${this.size}, weight >> ${this.weight}, type >> ${type_str}
     `;
 
-  if (on_file) {
-    const d = new Date();
-    const  formatDate =  `${d.getFullYear()}-${d.getMonth()+ 1}-${d.getDate()}`;
-    const logname = `pokedecode.${formatDate}.log`;
-    fs.writeFileSync(logname, output, "utf-8");
-    console.log(`# The dump is successfully saved on file ${logname}`);
+    if (on_file) {
+      const d = new Date();
+      const  formatDate =  `${d.getFullYear()}-${d.getMonth()+ 1}-${d.getDate()}`;
+      const logname = `pokedecode.${formatDate}.log`;
+      fs.writeFileSync(logname, output, "utf-8");
+      console.log(`# The dump is successfully saved on file ${logname}`);
 
 
 
-  }
-  else
-  {
-    console.log(output);
+    }
+    else
+    {
+      console.log(output);
     }
   }
 }
