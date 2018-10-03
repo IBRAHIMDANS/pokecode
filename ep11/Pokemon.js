@@ -14,7 +14,7 @@ class Pokemon {
     this.weight = weight
     this.type = type
     this.level = level
-    this.attacks = attacks
+    // this.attacks = attacks
     if(is_yelling){
       this.yell()
     }
