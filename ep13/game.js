@@ -74,7 +74,7 @@ class Game {
     this.pokemons_starters = pokemons
   }
   start(){
-      this.trainers[0].getPokemons()[0].action()
+      this.trainers[0].getPokemons()[0].action().del(this.pokemons_starters)
 
 
     // console.log("0 : Poké Action");
