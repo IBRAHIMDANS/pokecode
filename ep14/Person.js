@@ -1,5 +1,5 @@
 
-class Person extends trainer{
+class Person {
 
   constructor(firstname,age){
     this.firstname = firstname;

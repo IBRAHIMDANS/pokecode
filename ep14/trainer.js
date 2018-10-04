@@ -1,7 +1,7 @@
 
 const fs = require('fs')
-
-class Trainer {
+const Person = require('./Person.js')
+class Trainer extends Person {
 
    constructor (firstname, age) {
      super(firstname,age)
@@ -15,6 +15,7 @@ class Trainer {
      const d = new Date()
      this.startDate = `${d.getFullYear()} - ${d.getMonth() + 1} - ${d.getDate()}`
      console.log(`Here comes a new challenger ••[[ ${this.id} ${this.firstname}`)
+      super.hi()
    }
 
    hey() {
@@ -29,7 +30,7 @@ class Trainer {
    start(pokemons) {
      this.pokemons.push(pokemons)
      // this.pokemons.push(pokemons[Math.floor(Math.random() * pokemons.length)])
-    console.log(`Yeaaaaaaah, my first pokémon is ${this.pokemons[0].name}`);
+    console.log(`Yeaaaaaaah, my first pokémon is ${this.pokemons.name}`);
 
 
    }
