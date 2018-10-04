@@ -28,9 +28,10 @@ class Trainer {
    }
 
    start(pokemons) {
-     this.pokemons.push(pokemons[Math.floor(Math.random() * pokemons.length)])
-     console.log(`Yeaaaaaaah, my first pokémon is ${this.pokemons[0].name}`);
-      this.pokemons[0].yell()
+     this.pokemons.push(pokemons)
+     // this.pokemons.push(pokemons[Math.floor(Math.random() * pokemons.length)])
+    console.log(`Yeaaaaaaah, my first pokémon is ${this.pokemons[0].name}`);
+  
    }
 
    getPokemons(){

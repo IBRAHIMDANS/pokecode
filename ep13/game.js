@@ -29,6 +29,7 @@ class Game {
                  value: numberPokemon.number
                },numberPokemon.level);
                pokemon.dump();
+
                pokemons.push(pokemon)
               }
                trainer.setPokemons(pokemons);
@@ -54,7 +55,10 @@ class Game {
              value: pokemonName
            })) ;
     }
-    trainer.start(starter)
+    let lenStart= starter.length;
+    let random = starter[Math.floor(Math.random()*lenStart)]
+    trainer.start(random)
+    this.pokemons_starters.splice(this.pokemons_starters.indexOf(random))
 
     let pokemons = trainer.getPokemons()
     for (let i = 0; i < 5; i++){
@@ -65,16 +69,10 @@ class Game {
       }
     }
   }
-  getPokemons_starter(){
-    return this.pokemons_starters
-  }
 
-
-  setPokemons_starter(pokemons){
-    this.pokemons_starters = pokemons
-  }
   start(){
-      this.trainers[0].getPokemons()[0].action().del(this.pokemons_starters)
+    this.pokemons
+    // this.trainers[0].getPokemons()[0].action()
 
 
     // console.log("0 : Poké Action");

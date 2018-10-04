@@ -43,7 +43,7 @@ class PokemonFactory {
     level
   };
 
-  return new Pokemon(pokedata, true)
+  return new Pokemon(pokedata)
   }
 }
 
