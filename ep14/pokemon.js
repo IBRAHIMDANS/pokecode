@@ -1,25 +1,25 @@
 
 const fs = require('fs')
 const pokedex = require('../data/pokedex.json')
+const Animal = require('./animal.js')
 
-class Pokemon {
+class Pokemon extends  Animal{
 
     constructor({number, name, size, weight, type, attacks, level = 3}, is_yelling=true) {
-
+    super(name,size,weight)
     this.number = number
-    this.name = name
-    this.size = size
-    this.weight = weight
     this.type = type
     this.level = level
     this.attacks = attacks
+    super.yell()
 
     if(is_yelling){
     this.yell()
     }
+
   }
   yell(){
-    console.log(`•••••• ${this.name.toUpperCase()}`)
+    console.log(`~~ ${this.name.toUpperCase()} ~~`)
   }
 
   action(){
