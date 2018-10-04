@@ -2,14 +2,14 @@
 const fs = require('fs')
 
 class Trainer {
-   constructor (firstname, age) {
 
+   constructor (firstname, age) {
+     super(firstname,age)
      if ( typeof Trainer.counter == 'undefined') {
        Trainer.counter = 1
      }
      this.id = Trainer.counter++;           // attribut static
-     this.firstname = firstname;
-     this.age = age;
+
      this.pokemons = [];
 
      const d = new Date()
