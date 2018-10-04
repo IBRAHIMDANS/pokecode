@@ -3,3 +3,4 @@ git add --all ; git commit -m 'ok'; git push
 node main.js ../data/trainer.json --log
 
 https://www.jdecool.fr/blog/2014/10/28/les-prototypes-javascript.html
+http://putaindecode.io/fr/articles/npm/install-g/

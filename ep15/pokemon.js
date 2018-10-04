@@ -5,13 +5,15 @@ const Animal = require('./animal.js')
 
 class Pokemon extends  Animal{
 
-    constructor({number, name, size, weight, type, attacks, level = 3}, is_yelling=false) {
+    constructor({number, name, size, weight, type, attacks, level = 3,heath,pp}, is_yelling=true) {
     super(name,size,weight)
     this.number = number
     this.type = type
     this.level = level
     this.attacks = attacks
-
+    this.heath = heath
+    this.pp = pp
+    super.yell()
 
     if(is_yelling){
     this.yell()
@@ -19,7 +21,6 @@ class Pokemon extends  Animal{
 
   }
   yell(){
-    super.yell()
     console.log(`~~ ${this.name.toUpperCase()} ~~`)
   }
 
