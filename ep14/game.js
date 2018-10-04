@@ -19,16 +19,17 @@ class Game {
         const data = fs.readFileSync(this.pokestory, 'utf-8')
         const json = JSON.parse(data)
 
-        let pokemons = []
+
 
         for (let item of json.trainers ){
+          let pokemons = []
           let trainer = new Trainer(item.firstname, item.age)
             for (let numberPokemon of item.pokemons){
               const pokemon = PokemonFactory.create({
                  key: "ndex",
-                 value: numberPokemon.number
+                 value: numberPokemon
                },numberPokemon.level);
-               pokemon.dump();
+                // pokemon.dump();
 
                pokemons.push(pokemon)
               }
