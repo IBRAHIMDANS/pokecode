@@ -48,7 +48,7 @@ class Game {
         let trainer = new Trainer(json.firstname, json.age)
         trainer.hey()
         const starter = []
-        for (const item of ["Bulbizarre","Salamèche","Carapuce"]){
+        for (let item of ["Bulbizarre","Salamèche","Carapuce"]){
           starter.push(PokemonFactory.create({key:"nom", value : item}))
         }
           trainer.start(starter)

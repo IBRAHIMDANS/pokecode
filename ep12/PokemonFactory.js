@@ -6,14 +6,15 @@ class PokemonFactory {
   static create({key , value}= {undefined , undefined}){
     let pokemon
     if(key != undefined){
-    const pokemon = pokedex.find(function(item){
-      return item[key] == value;
-    });
+     pokemon = pokedex.find(function(item){
+      return item[key] == value;});
 }else {
+
 let randomIndex = Math.floor(Math.random()*pokedex.length);
-pokemon = pokedex(randomIndex)
+pokemon = pokedex[randomIndex]
 
 }
+
     let type = []
     let i =1
     while (pokemon[`type${i}`] != undefined) {
